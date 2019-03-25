@@ -1,0 +1,6 @@
+Django==1.10.5
+watson-developer-cloud==0.25.1
+django-registration==2.2
+eventlet==0.20.1
+skyscanner==1.1.4
+bs4==0.0.1

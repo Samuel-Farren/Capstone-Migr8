@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}User Account{% endblock %}
+
+{% block content %}
+	<h2>User account</h2>
+	<p>User account - {{user}}</p>
+	<table class="table">
+		<caption>Your Recent Queries:</caption>
+		<thead>
+			<th>#</th>
+			<th>Query</th>
+			<th>Search link</th>
+		</thead>
+		<tbody>
+		{% for x in querys %}
+		<tr>
+			<td>{{forloop.counter}}</td>
+			<td>{{x.query}}</td>
+			<td><a href="/search?search={{x.query}}">Link</a> </td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+  
+{% endblock %}

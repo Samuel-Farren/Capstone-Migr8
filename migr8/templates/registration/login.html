@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<header class="intro2">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <h1 class="regHeader">Login</h1>
+                <div class="col-md-6 col-md-offset-3">
+
+                      <form method="post">
+                        {% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                        <section class="content">
+                            <!-- <h2 class="nomargin-bottom">Login</h2> -->
+                        {% for field in form %}
+
+                                <span class="input input--haruki">
+                                    {% if field.name != 'password' %}
+                                    <input class="input__field input__field--haruki"  name="{{field.name}}" type="text" id="input-{{forloop.counter}}" />
+                                    {% else %}
+                                    <input class="input__field input__field--haruki"  name="{{field.name}}" type="password" id="input-{{forloop.counter}}" />
+                                    {% endif%}
+                                    <label class="input__label input__label--haruki" for="input-{{forloop.counter}}">
+                                        <span class="input__label-content input__label-content--haruki">{{ field.name }}</span>
+                                    </label>
+                                </span>
+
+                        {% endfor %}
+                        </section>
+                        <div class="col-md-12">
+                          <button type="submit" id="demoSubmit" class="btn customButton"><b>Login</b></button>
+                          <p class="regNowFormat">Don't have an account? <a class="registerNow" href="/accounts/register/">Register now!</a></p>
+
+                      </div>
+                      </form>
+
+{% endblock %}
+</div>
+</div>
+</div>
+</div>
+</header>
+
+
+
+
+<!-- <header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Migr8</h1>
+                    <p class="intro-text">The smart way to plan your next vacation.
+                            <form action="/search" method="get">
+
+                                  <span class="input input--kohana">
+                                  <input type="text" class="input__field input__field--kohana" id="query" name="search" placeholder="Where can I go..."/>
+                                  <label class="input__label input__label--kohana" for="query">
+                                    <i class="fa fa-fw fa-rocket icon icon--kohana"></i>
+                                    <span class="input__label-content input__label-content--kohana"></span>
+                                </label>
+                            </span>
+                                </div>
+                                <div class="col-md-2 col-md-offset-5">
+                                  <button type="submit" id="demoSubmit" class="btn customButton"><b>Submit</b></button>
+
+                            </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
